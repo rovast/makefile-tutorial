@@ -1,0 +1,4 @@
+# ingnore object files
+*.o
+.vscode
+.ideal
