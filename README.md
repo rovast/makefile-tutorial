@@ -227,10 +227,12 @@ clean:
 
 ```bash
 ➜  src git:(master) ✗ make
-make: *** No rule to make target `obj/hellomake.o', needed by `hellomake'.  Stop.
+gcc -c -o obj/hellomake.o hellomake.c -I../include
+gcc -c -o obj/hellofunc.o hellofunc.c -I../include
+gcc -o hellomake obj/hellomake.o obj/hellofunc.o -I../include
 ```
 
-> 囧，，运行不出来。
+> 注意要在 `src` 目录下运行，并且要把 `.h` 文件放到 `include` 目录里
 
 好了，到目前为止，你已经有了一个不错的 makefile 了，现在你能 hold 住一个中型的项目了。你也可以增加更多的规则到 makefile 里，你甚至可以在一个规则中调用另一个规则。
 
